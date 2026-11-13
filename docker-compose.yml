@@ -1,0 +1,48 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    environment:
+      DB_HOST: db
+      DB_USER: payroll
+      DB_PASS: payroll
+      DB_NAME: payroll
+    volumes:
+      - ./www:/var/www/html
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:5.7
+    platform: linux/amd64
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: payroll
+      MYSQL_USER: payroll
+      MYSQL_PASSWORD: payroll
+    command: --character-set-server=utf8 --collation-server=utf8_general_ci
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d:ro
+      - dbdata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-prootpass"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    profiles: ["tools"]
+    ports:
+      - "${PMA_PORT:-8081}:80"
+    environment:
+      PMA_HOST: db
+    depends_on:
+      - db
+
+volumes:
+  dbdata:
