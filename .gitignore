@@ -1,0 +1,13 @@
+# local overrides
+www/config.local.php
+*.log
+.phpunit.result.cache
+phpunit.phar
+vendor/
+
+# editors / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
