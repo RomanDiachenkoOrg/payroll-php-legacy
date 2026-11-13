@@ -1,0 +1,131 @@
+/* Acme Payroll - main stylesheet */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333;
+    background: #e9edf2;
+}
+
+a { color: #1f4e8c; }
+a:hover { color: #c0392b; }
+
+h1 { font-size: 18px; color: #1f4e8c; margin: 0 0 12px 0; border-bottom: 1px solid #ccd5e0; padding-bottom: 4px; }
+h2 { font-size: 14px; color: #1f4e8c; margin: 18px 0 8px 0; }
+
+#layout { min-height: 100%; }
+
+#top {
+    background: #1f4e8c;
+    background: linear-gradient(#2c62a8, #1f4e8c);
+    color: #fff;
+    padding: 10px 14px;
+}
+#top a { color: #fff; }
+#logo { font-size: 20px; font-weight: bold; text-decoration: none; font-family: Georgia, serif; }
+.userbox { font-size: 11px; }
+
+#sidebar {
+    background: #f6f8fb;
+    border-right: 1px solid #ccd5e0;
+    padding: 10px 0;
+}
+ul.menu { list-style: none; margin: 0; padding: 0; }
+ul.menu li a {
+    display: block;
+    padding: 6px 14px;
+    text-decoration: none;
+    border-bottom: 1px solid #e3e8ef;
+}
+ul.menu li a:hover { background: #e3ebf6; }
+ul.menu li.active a { background: #1f4e8c; color: #fff; font-weight: bold; }
+ul.menu li.menu-header { padding: 12px 14px 4px 14px; font-size: 10px; text-transform: uppercase; color: #888; }
+
+#content { background: #fff; padding: 16px 20px; }
+#footer { text-align: center; font-size: 10px; color: #888; padding: 10px; }
+
+/* tables */
+table.grid { border-collapse: collapse; border: 1px solid #ccd5e0; margin-bottom: 10px; }
+table.grid th { background: #dfe6ef; text-align: left; padding: 5px 7px; border-bottom: 1px solid #b9c6d6; white-space: nowrap; }
+table.grid th a { color: #333; text-decoration: none; }
+table.grid td { padding: 4px 7px; border-bottom: 1px solid #e8ecf1; }
+table.grid tr.odd td { background: #f7f9fc; }
+table.grid tr.hover td { background: #fffbe0; }
+table.grid tr.total td { border-top: 2px solid #b9c6d6; }
+td.num, th.num { text-align: right; }
+td.empty { text-align: center; color: #888; padding: 14px; font-style: italic; }
+
+table.form th { text-align: right; font-weight: normal; padding: 4px 8px 4px 0; vertical-align: top; white-space: nowrap; }
+table.form td { padding: 3px 0; }
+table.details th { text-align: left; padding: 3px 12px 3px 0; color: #666; font-weight: normal; vertical-align: top; }
+table.details td { padding: 3px 0; }
+
+input[type=text], input[type=password], select, textarea {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    border: 1px solid #a8b5c5;
+    padding: 2px 3px;
+}
+
+.button, input.button {
+    display: inline-block;
+    background: #2c62a8;
+    color: #fff !important;
+    border: 1px solid #1f4e8c;
+    padding: 3px 10px;
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.button:hover { background: #1f4e8c; }
+.button-danger, input.button-danger { background: #c0392b; border-color: #96281b; }
+.button-ok, input.button-ok { background: #2e8b57; border-color: #1e6b40; }
+.link-button { background: none; border: none; color: #1f4e8c; text-decoration: underline; cursor: pointer; padding: 0; font-size: 12px; }
+form.inline { display: inline; }
+.actions { margin: 8px 0 14px 0; }
+
+.msg { padding: 8px 12px; margin-bottom: 12px; border: 1px solid; }
+.msg-success { background: #e6f4ea; border-color: #9fd4ae; color: #1e6b40; }
+.msg-error { background: #fdecea; border-color: #f2b8b5; color: #96281b; }
+.msg-info { background: #e8f0fb; border-color: #b6cbe8; color: #1f4e8c; }
+.field-error { color: #c0392b; font-size: 11px; }
+.hint, .small { font-size: 10px; color: #777; }
+.breadcrumb { font-size: 11px; color: #777; margin: 0 0 6px 0; }
+
+.status { padding: 1px 6px; font-size: 10px; border: 1px solid #ccc; background: #eee; }
+.status-active, .status-approved { background: #e6f4ea; border-color: #9fd4ae; color: #1e6b40; }
+.status-inactive, .status-draft { background: #eee; color: #666; }
+.status-submitted, .status-calculated { background: #fff6dc; border-color: #f0d58a; color: #8a6d0b; }
+.status-rejected { background: #fdecea; border-color: #f2b8b5; color: #96281b; }
+.status-paid { background: #e8f0fb; border-color: #b6cbe8; color: #1f4e8c; }
+.locked { color: #777; font-style: italic; }
+
+.filter { background: #f6f8fb; border: 1px solid #ccd5e0; padding: 8px; margin-bottom: 12px; }
+.pager { margin: 8px 0; }
+.pager a, .pager b { padding: 0 3px; }
+
+table.stats td.stat { background: #f6f8fb; border: 1px solid #ccd5e0; padding: 10px 16px; width: 180px; vertical-align: top; }
+.stat-label { font-size: 11px; color: #666; }
+.stat-value { font-size: 22px; font-weight: bold; color: #1f4e8c; margin: 4px 0; }
+
+table.bar-chart { width: 100%; }
+table.bar-chart td { padding: 3px 4px; }
+td.bar-label { width: 70px; white-space: nowrap; }
+td.bar-cell { width: 70%; }
+div.bar { background: #2c62a8; height: 14px; }
+
+table.summary td { background: #f6f8fb; border: 1px solid #ccd5e0; padding: 6px 14px; }
+table.hours-grid input { text-align: right; }
+#total-hours.overtime { color: #c0392b; }
+
+#login-box { width: 360px; margin: 60px auto; border: 1px solid #ccd5e0; padding: 20px; background: #f6f8fb; }
+
+.payslip { border: 1px solid #ccd5e0; padding: 16px; width: 640px; }
+.payslip h2 { margin: 0; }
+table.breakdown { border-top: 1px solid #ccd5e0; margin-top: 10px; }
+table.breakdown td, table.breakdown th { padding: 4px 0; text-align: left; }
+table.breakdown tr.total th, table.breakdown tr.total td { border-top: 1px solid #ccd5e0; }
+table.breakdown tr.net th, table.breakdown tr.net td { font-size: 15px; font-weight: bold; border-top: 2px solid #333; }
+table.breakdown td.num { text-align: right; }

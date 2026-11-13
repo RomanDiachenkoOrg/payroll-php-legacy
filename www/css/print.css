@@ -1,0 +1,10 @@
+/* print styles */
+body { background: #fff; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000; }
+#top, #sidebar, #footer, .noprint, .actions, .msg { display: none; }
+#content { padding: 0; }
+.payslip { border: none; width: auto; }
+.payslip table { width: 100%; }
+table.details th { text-align: left; padding-right: 12px; font-weight: normal; color: #444; }
+table.breakdown td.num { text-align: right; }
+table.breakdown tr.net th, table.breakdown tr.net td { font-weight: bold; border-top: 2px solid #000; }
+.small { font-size: 9px; color: #555; }
